@@ -1,20 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Napa Creative Co`,
+    description: `Quality Web and Graphic Design for businesses of all types`,
+    author: `@napacreativeco`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-sanity`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        projectId: `3vg4y9tf`,
+        dataset: `production`,
+        overlayDrafts: true,
+        watchMode: true,
+        token: 'skSVAlv47A9r7kqOILwgFqUx8qiS02he6T3UXzAcqhgZ4kAorZQmSMppyvaapd6rRXfNq044OXPzhfg4Cucd3BQwsTLbQKcIICTk1QxWYQzoruFWDauB0JejoI56XmQD8InfiSgbJIABOyrVIFu1dFNBHW6RDNu8NqPh2v00C7b9EYAXcX9P'
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

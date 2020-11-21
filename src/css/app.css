@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+
+/* Reset */
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro',
+  sans-serif;
+  background: #fefefe;
+}
+ul { padding: 0; }
+a { text-decoration: none; }
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-weight: 600;
+  color: #4635EA;
+}
+p {
+  font-weight: 300;
+  color: #484848;
+}
+
+/* Header */
+header {
+  padding: 20px 40px;
+}
+header .row {
+  display: flex;
+  align-items: center;
+}
+
+
+/* Hero */
+.hero .row {
+  padding: 140px 10% 40px 10%;
+}
+h1.hero-title {
+  font-size: 40px;
+}
+.hero .row p.sub-title {
+  font-size: 18px;
+}
+
+/* Homepage Loop */
+.homepage-loop .container {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+  max-width: 100%;
+  padding: 40px;
+}
+.homepage-loop .item {
+  flex: 1 32%;
+  max-width: 32%;
+  margin-bottom: 40px;
+}
+.homepage-loop .image {
+  height: 300px;
+  overflow: auto;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.homepage-loop .info {
+  position: relative;
+}
+.homepage-loop .item .info h2 {
+  margin: 6px 0px 0px 0px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 75%;
+  overflow: hidden;
+}
+.homepage-loop h2 a {
+  color: #484848;
+}
+.homepage-loop .item .info p {
+  margin: 0;
+  padding: 0;
+}
+.homepage-loop .item .info a.link {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 25%;
+  color: #484848;
+  font-size: 90%;
+}
+
+
+/* ||MQ|| Media Queries */
+@media screen and (max-width: 950px) {
+
+  /* Homepage > Loop */
+  .homepage-loop .item {
+    flex: 1 49%;
+    max-width: 49%;
+  }
+
+}
+@media screen and (max-width: 694px) {
+
+  /* Homepage > Loop */
+  .homepage-loop .item {
+    flex: 1 99%;
+    max-width: 99%;
+  }
+
+}
+
+
+
