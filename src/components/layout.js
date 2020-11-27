@@ -7,32 +7,27 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+// import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      {/* Navigation */}
+      <Header />
 
-      <div>
+      <div className="page-container">
+        {/* Page Content */}
         <main>
           {children}
         </main>
 
+        {/* Footer */}
         <footer style={{ textAlign: 'center', padding: '20px 40px' }}>
-          &copy; {new Date().getFullYear()}, Built with Gatsby & Sanity by
+          &copy; {new Date().getFullYear()}, Built using React, Gatsby & Sanity by
           {` `}
           <a href="https://www.napacreativeco.com">Napa Creative Co.</a>
         </footer>

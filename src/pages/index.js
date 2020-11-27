@@ -1,28 +1,26 @@
 import React from "react"
 import { graphql } from 'gatsby'
-// import Image from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 import { Link } from "gatsby"
 import '../css/app.css'
+import Hero from '../components/hero.js'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-
-
-
+import Flip from 'react-reveal/Flip';
 
 // GraphQL Query
 export const query = graphql`
   {
-    allSanityProject {
+    allSanityProject(filter: {collections: {elemMatch: {title: {eq: "Spotlight"}}}}) {
       edges {
         node {
           title
-          description
           categories {
             title
           }
+          shortDescription
           slug {
             current
           }
@@ -40,36 +38,50 @@ export const query = graphql`
 `;
 
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
+function IndexPage({ data }) {
+  return (
+    <Layout>
+      <SEO title="Home" />
 
-    {/* Hero */}
-    <div className="hero">
-      <div className="row">
-        <p className="hero-subtitle">welcome</p>
-        <h1 className="hero-title">We Are An Independent Design Agency Focused On Web & Graphic Design Solutions for Brands and Companies that strive to Stand Out</h1>
-      </div>
-    </div>
+      <Hero />
 
-    {/* Post Loop */}  
-    <div className="homepage-loop">
-      <ul className="container">
-        { data.allSanityProject.edges.map( ({ node: project }) => (
 
-          <li key={project.slug.current } className="item">
-            <BackgroundImage fluid={ project.mainImage.asset.fluid } className="image"></BackgroundImage>
+      <div className="home-loop">
+        <h2>Recent work</h2>
+        <ul className="hs full no-scrollbar">
+          {data.allSanityProject.edges.map(({ node: project }) => (
+
+            <li key={project.slug.current} className="item">
+              <BackgroundImage fluid={project.mainImage.asset.fluid} className="image"></BackgroundImage>
               <div className="info">
-                <h2><Link to={ project.slug.current}>{ project.title }</Link></h2>
-                <p>{ project.description }</p>
-                <Link to={ project.slug.current } className="link">View more</Link>
+                <Flip top cascade><h3><Link to={project.slug.current}>{project.title}</Link></h3></Flip>
+                <p>{project.shortDescription}</p>
+                <Link to={project.slug.current} className="link">More info</Link>
               </div>
-          </li>
+            </li>
 
-        ))}
-      </ul>
-    </div>
-  </Layout>
-)
+          ))}
+        </ul>
+      </div>
+
+      <div className="homepage-services">
+        <div className="cell">
+          <h3>So what do we do?</h3>
+          <p>We utilize the latest tools to create pixel perfect Designs, Logos, Layouts and Promotional materials that look great on all formats</p>
+        </div>
+        <div className="cell">
+          <h3>How can we get started?</h3>
+          <p>Feeling like you might want to start a new project? Go ahead and contact us at the link below</p>
+          <button>Reach out</button>
+        </div>
+      </div>
+
+      <div class="marquee">
+
+      </div>
+
+    </Layout>
+  )
+}
 
 export default IndexPage

@@ -1,24 +1,65 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 import logo from "../images/text-logo-underline--blk.svg"
+import Hamburger from './hamburger.js'
+import NavigationLinks from './navigation.js'
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div className="row">
-        <Link to="/" style={{ width: '200px', padding: '0px' }}>
-          <img src={logo} alt="ok" style={{ width: '100%', marginBottom: '0' }} />
-        </Link>
-    </div>
-  </header>
-)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+
+
+
+class Header extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: 'none'
+    }
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    if ( this.state.display === 'none') {
+      this.setState({
+        display: 'block'
+      })
+    } else {
+      this.setState({
+        display: 'none'
+      })
+    }
+
+  }
+
+  render() {
+    return (
+      <header>
+        <div className="row">
+          <div className="cell left">
+            <Link to="/" className="logo-container">
+              <img src={logo} alt="Napa Creative Company" />
+            </Link>
+          </div>
+          <div className="cell right">
+            <div className="main-menu">
+              <NavigationLinks />
+            </div>
+            <div className="hamburger" onClick={ this.handleClick }>
+              <Hamburger  />
+            </div>
+          </div>
+        </div>
+        <div className="mobile-menu" style={{ display: this.state.display }}>
+            
+            <span onClick={ () => { this.setState({ display: 'none' }) }}>close</span>
+        </div>
+      </header>
+    )
+  }
+
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+
 
 export default Header
+
