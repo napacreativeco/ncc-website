@@ -41,12 +41,10 @@ p {
 }
 
 /* Header */
-header {
-  padding: 20px 40px;
-}
 header .row {
   display: flex;
   align-items: center;
+  padding: 20px 40px;
 }
 header .cell.left {
   padding: 0px 20px 0px 40px;
@@ -58,7 +56,7 @@ header img {
   width: 100%;
   max-width: 150px;
 }
-header ul.main-menu {
+header .main-menu ul {
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -77,6 +75,25 @@ header .main-menu li {
   background: #484848;
   height: 2px;
   margin: 4px 0px;
+}
+/* Mobile Menu */
+.mobile-menu {
+  background: #eaeaea;
+  transition: height 1s;
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mobile-menu li {
+  padding: 40px 20px;
+  border-bottom: 1px solid #484848;
+}
+.mobile-menu li a {
+  font-size: 150%;
+  margin: 5px 10px;
 }
 
 

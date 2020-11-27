@@ -8,7 +8,7 @@ import Hero from '../components/hero.js'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import Flip from 'react-reveal/Flip';
+
 
 // GraphQL Query
 export const query = graphql`
@@ -47,14 +47,14 @@ function IndexPage({ data }) {
 
 
       <div className="home-loop">
-        <h2>Recent work</h2>
+        <h2>Recent work <a href="/work" title="Our Work">view more</a></h2>
         <ul className="hs full no-scrollbar">
           {data.allSanityProject.edges.map(({ node: project }) => (
 
             <li key={project.slug.current} className="item">
               <BackgroundImage fluid={project.mainImage.asset.fluid} className="image"></BackgroundImage>
               <div className="info">
-                <Flip top cascade><h3><Link to={project.slug.current}>{project.title}</Link></h3></Flip>
+                <h3><Link to={project.slug.current}>{project.title}</Link></h3>
                 <p>{project.shortDescription}</p>
                 <Link to={project.slug.current} className="link">More info</Link>
               </div>

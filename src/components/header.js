@@ -50,7 +50,7 @@ class Header extends React.Component {
           </div>
         </div>
         <div className="mobile-menu" style={{ display: this.state.display }}>
-            
+            <NavigationLinks />
             <span onClick={ () => { this.setState({ display: 'none' }) }}>close</span>
         </div>
       </header>

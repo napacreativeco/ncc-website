@@ -19,7 +19,7 @@ export default function NavigationLinks() {
 
    return (
       <div>
-        <ul className="main-menu">
+        <ul>
           {data.allSanityNavigation.edges.map( ({ node: nav }) => (
             <li><a href={ nav.linkUrl } title={ nav.linkText }>{ nav.linkText }</a></li>
           ) )}
