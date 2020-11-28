@@ -50,8 +50,6 @@ function IndexPage({ data }) {
 
       <Hero />
 
-
-
       <div className="homepage-services">
         <div className="cell">
           <Fade cascade>
