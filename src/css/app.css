@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5 {
   letter-spacing: -1px;
   font-family: 'Karla', sans-serif;
 }
-p, a, input, label, footer {
+p, a, input, label, footer, li {
   font-weight: 300;
   color: #484848;
   letter-spacing: 0px;
@@ -228,6 +228,7 @@ h1.hero-title {
 }
 .home-loop .info h3 a {
   color: #484848;
+  font-weight: 600;
 }
 .home-loop .item .info p {
   margin: 0;
@@ -235,6 +236,8 @@ h1.hero-title {
   letter-spacing: -1px;
   font-size: 95%;
   font-weight: 100;
+  width: 75%;
+  line-height: 1.1;
 }
 .home-loop .item .info a.link {
   margin: 0;

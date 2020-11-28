@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 import '../css/app.css'
 import Hero from '../components/hero.js'
 import ViewMore from "../images/view-more-fill.svg"
-import ClientsArea from '../components/clientsArea.js'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

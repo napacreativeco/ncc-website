@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout.js';
 import { Link } from "gatsby";
 import BlockContent from '@sanity/block-content-to-react';
+import Image from 'gatsby-image'
 
 export const query = graphql`
   query($slug: String) {
@@ -12,7 +13,7 @@ export const query = graphql`
       categories {
         title
       }
-      mainImage {
+      projGallery {
         asset {
           fluid {
             ...GatsbySanityImageFluid
@@ -38,6 +39,9 @@ export default ({ data }) => (
       </div>
       <div className="project-body">
         <BlockContent blocks={ data.sanityProject._rawProjectBody } />
+        { data.sanityProject.projGallery.map((gallery) => (
+              <Image fluid={gallery.asset.fluid } />
+        ))}
       </div>
     </div>
     <div className="back-to-home"><Link to="/">Back to home</Link></div>
