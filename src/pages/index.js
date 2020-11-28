@@ -51,6 +51,30 @@ function IndexPage({ data }) {
       <Hero />
 
 
+      <div className="home-loop">
+        <div className="title">
+          <h2>Recent work <a href="/work" title="Our Work">browse all</a></h2>
+        </div>
+
+        <ul className="hs full no-scrollbar">
+          {data.allSanityProject.edges.map(({ node: project }) => (
+
+            <li key={project.slug.current} className="item">
+              <Fade right cascade>
+                <BackgroundImage fluid={project.mainImage.asset.fluid} className="image"></BackgroundImage>
+              <div className="info">
+                <h3><Link to={project.slug.current}>{project.title}</Link></h3>
+                <p>{project.shortDescription}</p>
+                <Link to={project.slug.current} className="link">
+                  <img src={ViewMore} alt="View more" style={{ width: '25px', height: '25px' }} />
+                </Link>
+              </div>
+              </Fade>
+            </li>
+
+          ))}
+        </ul>
+      </div>
 
       <div className="homepage-services">
         <div className="cell">
