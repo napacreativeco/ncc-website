@@ -4,16 +4,20 @@ import BackgroundImage from 'gatsby-background-image'
 import { Link } from "gatsby"
 import '../css/app.css'
 import Hero from '../components/hero.js'
+import ViewMore from "../images/view-more-fill.svg"
+import ClientsArea from '../components/clientsArea.js'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import Fade from 'react-reveal/Fade';
 
 
 
 // GraphQL Query
 export const query = graphql`
   {
-    allSanityProject(filter: {collections: {elemMatch: {title: {eq: "Spotlight"}}}}) {
+    allSanityProject {
       edges {
         node {
           title
@@ -43,21 +47,29 @@ function IndexPage({ data }) {
     <Layout>
       <SEO title="Home" />
 
+
       <Hero />
 
 
       <div className="home-loop">
-        <h2>Recent work <a href="/work" title="Our Work">view more</a></h2>
+        <div className="title">
+          <h2>Recent work <a href="/work" title="Our Work">browse all</a></h2>
+        </div>
+
         <ul className="hs full no-scrollbar">
           {data.allSanityProject.edges.map(({ node: project }) => (
 
             <li key={project.slug.current} className="item">
-              <BackgroundImage fluid={project.mainImage.asset.fluid} className="image"></BackgroundImage>
+              <Fade right cascade>
+                <BackgroundImage fluid={project.mainImage.asset.fluid} className="image"></BackgroundImage>
               <div className="info">
                 <h3><Link to={project.slug.current}>{project.title}</Link></h3>
                 <p>{project.shortDescription}</p>
-                <Link to={project.slug.current} className="link">More info</Link>
+                <Link to={project.slug.current} className="link">
+                  <img src={ViewMore} alt="View more" style={{ width: '25px', height: '25px' }} />
+                </Link>
               </div>
+              </Fade>
             </li>
 
           ))}
@@ -66,18 +78,19 @@ function IndexPage({ data }) {
 
       <div className="homepage-services">
         <div className="cell">
-          <h3>So what do we do?</h3>
-          <p>We utilize the latest tools to create pixel perfect Designs, Logos, Layouts and Promotional materials that look great on all formats</p>
+          <Fade cascade>
+            <h3>So what do we do?</h3>
+            <p>We utilize the latest tools to create pixel perfect Designs, Logos, Layouts and Promotional materials that look great on all formats</p>
+            <Link to="/about"><button>About us</button></Link>
+          </Fade>
         </div>
         <div className="cell">
-          <h3>How can we get started?</h3>
-          <p>Feeling like you might want to start a new project? Go ahead and contact us at the link below</p>
-          <button>Reach out</button>
+          <Fade cascade>
+            <h3>How can we get started?</h3>
+            <p>Feeling like you might want to start a new project? Go ahead and contact us at the link below</p>
+            <Link to="/contact"><button>Reach out</button></Link>
+          </Fade>
         </div>
-      </div>
-
-      <div class="marquee">
-
       </div>
 
     </Layout>

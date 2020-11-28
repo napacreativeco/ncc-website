@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;600;800&display=swap');
 
 /* Reset */
 * {
@@ -6,15 +8,14 @@
 }
 body {
   margin: 0;
-  font-family: 'Source Sans Pro',
-  sans-serif;
   background: #fefefe;
   overflow-x: hidden;
   overflow-y: scroll;
   max-width: 100%;
 }
 ul { padding: 0; }
-a { text-decoration: none; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; }
 
 /* Preloader */
 .preloader-container {
@@ -32,19 +33,32 @@ a { text-decoration: none; }
 /* Typography */
 h1, h2, h3, h4, h5 {
   font-weight: 600;
-  color: #4635EA;
+  /* color: #4635EA; */
+  color: #484848;
   line-height: 1.1;
+  letter-spacing: -1px;
+  font-family: 'Karla', sans-serif;
 }
-p {
+p, a, input, label, footer {
   font-weight: 300;
   color: #484848;
+  letter-spacing: 0px;
+  font-family: 'Karla', sans-serif;
 }
 
-/* Header */
+/* ===============
+ * Navigation
+ * =============== */
 header .row {
   display: flex;
   align-items: center;
   padding: 20px 40px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fefefe;
+  height: 72px;
 }
 header .cell.left {
   padding: 0px 20px 0px 40px;
@@ -68,7 +82,11 @@ header .main-menu li {
 /* Mobile Menu */
 .hamburger {
   display: none;
-  position: relative;
+  width: 20px;
+  cursor: pointer;
+}
+.hamburger .bun {
+  width: 20px;
 }
 .hamburger .fixings {
   width: 20px;
@@ -79,7 +97,8 @@ header .main-menu li {
 /* Mobile Menu */
 .mobile-menu {
   background: #eaeaea;
-  transition: height 1s;
+  transition: all 1s;
+  width: 100%;
 }
 .mobile-menu ul {
   list-style: none;
@@ -91,13 +110,17 @@ header .main-menu li {
   padding: 40px 20px;
   border-bottom: 1px solid #484848;
 }
+.mobile-menu li:first-of-type {
+  border-top: 1px solid #484848;
+}
 .mobile-menu li a {
   font-size: 150%;
   margin: 5px 10px;
 }
 
-
-/* Hero */
+/* ===============
+ * Homepage > Hero 
+ * =============== */
 .hero {
   border-bottom: 1px solid #eaeaea;
 }
@@ -113,7 +136,9 @@ h1.hero-title {
   font-size: 18px;
 }
 
-/* Homepage Loop */
+/* ===============
+ * Homepage > Loop 
+ * =============== */
 .home-loop {
   padding: 20px 0;
   display: grid;
@@ -121,6 +146,7 @@ h1.hero-title {
   grid-template-columns: 20px 1fr 20px;
   align-content: start;
   margin-bottom: 40px;
+  margin-top: 40px;
 }
 .home-loop > * {
   grid-column: 2 / -2;
@@ -131,11 +157,11 @@ h1.hero-title {
 }
 .hs {
   display: grid;
-  grid-gap: calc(40px / 2);
-  grid-template-columns: 10px;
+  grid-gap: 30px;
+  grid-template-columns: 0px;
   grid-template-rows: minmax(150px, 1fr);
   grid-auto-flow: column;
-  grid-auto-columns: calc(320px - 20px * 2);
+  grid-auto-columns: 380px;
 
   overflow-x: scroll;
   scroll-snap-type: x proximity;
@@ -156,17 +182,21 @@ h1.hero-title {
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
-/* Typography */
+.home-loop .title {
+  padding: 0px 10% 0px 10%;
+}
 .home-loop h2 {
   color: #484848;
   font-size: 28px;
+  margin: 0;
 }
 .home-loop h2 a,
 .home-loop h2 span {
   font-weight: 300;
   font-size: 60%;
   padding-left: 15px;
-  color: #585858
+  color: #585858;
+  letter-spacing: 0px;
 }
 .home-loop .container {
   list-style: none;
@@ -178,7 +208,6 @@ h1.hero-title {
   flex-wrap: nowrap;
 }
 .home-loop .item {
-
   scroll-snap-align: center;
 }
 .home-loop .image {
@@ -190,10 +219,6 @@ h1.hero-title {
 .home-loop .info {
   position: relative;
 }
-.home-loop .info-overlay {
-  background: #000;
-  height: 100%;
-}
 .home-loop .item .info h3 {
   margin: 6px 0px 0px 0px;
   white-space: nowrap;
@@ -203,18 +228,20 @@ h1.hero-title {
 }
 .home-loop .info h3 a {
   color: #484848;
-  font-size: 90%;
 }
 .home-loop .item .info p {
   margin: 0;
   padding: 0;
+  letter-spacing: -1px;
+  font-size: 95%;
+  font-weight: 100;
 }
 .home-loop .item .info a.link {
   margin: 0;
   padding: 0;
   position: absolute;
   right: 0px;
-  top: 6px;
+  top: 10px;
   max-width: 25%;
   color: #484848;
   font-size: 90%;
@@ -223,7 +250,7 @@ h1.hero-title {
  * Work Page > Loop 
 * ==================== */
 .work-loop {
-  padding: 40px;
+  padding: 140px 40px 40px 40px;
 }
 .work-loop h2 {
   color: #484848;
@@ -267,21 +294,48 @@ h1.hero-title {
   height: 100%;
   padding: 40px;
   transition: opacity 0.4s;
-  
 }
 .work-loop .info-overlay:hover {
   opacity: 1;
 }
 
 .work-loop .info-overlay h3 a {
-  margin: 0px; 
+  margin: 0px;
+  padding: 0px 20px 0px 0px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 140%;
+  line-height: 1.3;
 }
 .work-loop .info-overlay a,
 .work-loop .info-overlay p {
   color: #fefefe;
 }
-.work-loop .info-overlay a {
-  text-decoration: underline;
+
+.work-loop .info-overlay a.link {
+  font-weight: 600;
+  border-radius: 3px;
+}
+.work-loop .arrow-right {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  transition: all 0.3s;
+}
+.work-loop .arrow-right:hover {
+  background: #eaeaea;
+  bottom: 23px;
+}
+.work-loop .arrow-right img {
+  width: 23px;
 }
 /* ==========================
 *  Homepage > Services
@@ -297,11 +351,24 @@ h1.hero-title {
   margin: 0px 40px;
 }
 .homepage-services button {
-  padding: 6px 12px;
+  padding: 10px 16px;
   border-radius: 14px;
-  border: 2px solid #484848;
+  background: #fefefe;
+  font-weight: 400;
+  outline: 0;
+  border: 0;
+  transition: all 0.3s;
+  cursor: pointer;
 }
-/* Single Project */
+.homepage-services button:hover {
+  border-radius: 10px;
+  letter-spacing: 1px;
+  background: #ffffff;
+}
+
+/* ==========================
+*  Project Page
+ * ========================== */
 .project-container {
   width: 100%;
   max-width: 100vw;
@@ -309,61 +376,128 @@ h1.hero-title {
   min-height: 100vh;
   padding: 80px 10%;
 }
-/* Title Card */
-.project-container .title-card {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 40px auto 40px auto;
+.project-container .intro {
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
 }
-/* Title Card > Cell */
-.project-container .title-card .cell {
-  width: 50%;
-  display: table-cell;
+.project-container p {
+  font-size: 140%;
 }
-/* Title Card > Left */
-.project-container .title-card .cell.left {
-  width: 50%;
-  padding: 40px;
-}
-/* Title Card > Right */
-.project-container .title-card .cell.right {
-  width: 50%;
-  padding: 40px;
-}
-.project-container .title-card h1 {
-  margin-bottom: 0px;
-  font-size: 44px;
-}
-.project-container .title-card ul.categories {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  margin-top: 8px;
-}
-.project-container .title-card .categories li {
-  padding-right: 12px;
-  font-size: 14px;
-  white-space: nowrap;
-}
-.project-container .title-card .categories li::after {
-  content: ',';
-}
-.project-container .title-card .categories li:last-of-type::after {
-  content: ' ';
-}
-.project-container img {
-  width: 120px;
-  height: 120px;
-  clip-path: circle(120px at center);
-}
+
 .back-to-home {
   width: 100%;
   text-align: center;
   padding-bottom: 20px;
 }
 
-/* ||MQ|| Media Queries */
+/* =================
+ * Contact Page
+ * ================= */
+.contact-container {
+  padding-top: 140px;
+}
+.contact-container h2 {
+  color: #484848;
+  font-size: 28px;
+}
+.contact-container h2 a,
+.contact-container h2 span {
+  font-weight: 300;
+  font-size: 60%;
+  padding-left: 15px;
+  color: #585858
+}
+.contact-form {
+  width: 85%;
+  max-width: 600px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 20px auto 80px auto;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #484848;
+  padding: 10px 6px;
+  border-radius: 4px;
+}
+.contact-form textarea {
+  min-height: 100px;
+  min-width: 100%;
+  max-width: 100%;
+}
+.contact-form label p,
+.contact-form h3 {
+  font-weight: 600;
+  margin: 6px 0px;
+  color: #484848;
+  font-size: 1.2rem;
+}
+.contact-radio-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 40px 0px;
+}
+.contact-form .radio-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact-form button {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 2px solid #484848;
+  border-radius: 6px;
+  padding: 5px 12px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  border-radius: 10px;
+  letter-spacing: 1px;
+  background: #f1f1f1;
+}
+/* =============================
+ * About Page
+ * ============================= */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 72px;
+}
+.about-container .cell {
+  width: 50%;
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-container .cell div {
+  width: 100%;
+}
+.about-container .left {
+  background: #eaeaea;
+}
+.about-container p.intro {
+  font-size: 1.8rem;
+}
+.about-container strong {
+  padding-right: 15px;
+  font-size: 130%;
+}
+
+footer {
+  font-size: 80%;
+}
+/* =============================
+ * ||MQ|| Media Queries
+ * ============================= */
 @media screen and (max-width: 1500px) {
 
   /* Homepage > Loop */
@@ -380,7 +514,14 @@ h1.hero-title {
     display: none !important;
   }
   .hamburger {
-    display: block;
+    display: flex;
+    justify-content: flex-end;
+  }
+  header .cell.left {
+    width: 80%;
+  }
+  header .cell.right {
+    width: 20%;
   }
 
   /* Homepage > Loop */
@@ -399,11 +540,34 @@ h1.hero-title {
 }
 @media screen and (max-width: 694px) {
 
+  /* Hero */
+  .hero .row {
+    padding: 140px 40px 140px 40px;
+  }
+  h1.hero-title {
+    font-size: 30px;
+  }
   /* Homepage > Loop */
   .work-loop .item {
     flex: 1 100%;
     max-width: 100%;
     margin-right: 0;
   }
+  /* Contact Page */
+  .contact-radio-container {
+    flex-direction: column;
+  }
+  .radio-btn {
+    margin: 0px 0px 12px 0px;
+  }
 
 }
+
+
+
+
+
+
+
+
+
