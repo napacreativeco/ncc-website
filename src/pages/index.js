@@ -55,7 +55,6 @@ function IndexPage({ data }) {
           <Fade cascade>
             <h3>So what do we do?</h3>
             <p>We utilize the latest tools to create pixel perfect Designs, Logos, Layouts and Promotional materials that look great on all formats</p>
-            <Link to="/about"><button>About us</button></Link>
           </Fade>
         </div>
         <div className="cell">
