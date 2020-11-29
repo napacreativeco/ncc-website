@@ -49,7 +49,6 @@ function IndexPage({ data }) {
 
       <Hero />
 
-<<<<<<< HEAD
 
       <div className="home-loop">
         <div className="title">
@@ -76,8 +75,6 @@ function IndexPage({ data }) {
         </ul>
       </div>
 
-=======
->>>>>>> c0114a5235ba6b19cb8a78925ac01f7172310252
       <div className="homepage-services">
         <div className="cell">
           <Fade cascade>
