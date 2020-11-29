@@ -49,6 +49,7 @@ function IndexPage({ data }) {
 
       <Hero />
 
+<<<<<<< HEAD
 
       <div className="home-loop">
         <div className="title">
@@ -75,12 +76,13 @@ function IndexPage({ data }) {
         </ul>
       </div>
 
+=======
+>>>>>>> c0114a5235ba6b19cb8a78925ac01f7172310252
       <div className="homepage-services">
         <div className="cell">
           <Fade cascade>
             <h3>So what do we do?</h3>
             <p>We utilize the latest tools to create pixel perfect Designs, Logos, Layouts and Promotional materials that look great on all formats</p>
-            <Link to="/about"><button>About us</button></Link>
           </Fade>
         </div>
         <div className="cell">
