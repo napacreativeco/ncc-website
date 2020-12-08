@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import logo from "../images/text-logo-underline--blk.svg"
 import Hamburger from './hamburger.js'
 import NavigationLinks from './navigation.js'
 
@@ -25,7 +24,7 @@ class Header extends React.Component {
       this.setState({
         display: 'block',
         boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px',
-        top: '72px'
+        top: '0px'
       })
     } else {
       this.setState({
@@ -33,34 +32,45 @@ class Header extends React.Component {
         boxShadow: 'none'
       })
     }
-
   }
 
   render() {
     return (
       <header>
-        <div className="row" style={{ boxShadow: this.state.boxShadow }}>
+
+        <div className="row top">
           <div className="cell left">
+            <h4>GRAPHIC DESIGN</h4>
+          </div>
+          <div className="cell center">
             <Link to="/" className="logo-container">
-              <img src={logo} alt="Napa Creative Company" />
+              <h2>NAPA CREATIVE CO.</h2>
             </Link>
           </div>
           <div className="cell right">
-            <div className="main-menu">
-              <NavigationLinks />
-            </div>
+            <h4>WEB DEVELOPMENT</h4>
+          </div>
+        </div>
+
+
+        <div className="row menu" style={{ boxShadow: this.state.boxShadow }}>
+  
+            <div className="main-menu"><NavigationLinks /></div>
+
             <div className="hamburger" role="link" tabIndex="0" onClick={ this.handleClick } onKeyDown={ this.handleClick }>
               <div><Hamburger  /></div>
             </div>
-          </div>
+
         </div>
-        <div style={{ position: 'relative' }}>
-          <Fade top>
+
+        <div id="mobile-menu" style={{ position: 'relative' }}>
+          <Fade top duration={300}>
             <div className="mobile-menu" style={{ display: this.state.display, zIndex: '-1', marginTop: this.state.top }}>
                 <NavigationLinks />
             </div>
           </Fade>
         </div>
+
       </header>
     )
   }

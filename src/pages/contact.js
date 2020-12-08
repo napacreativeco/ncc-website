@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import MyForm from '../components/contactForm'
+import '../components/contact.css'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"

@@ -11,6 +11,11 @@ import PropTypes from "prop-types"
 
 import Header from "./header"
 
+import GitHub from '../images/github.svg'
+import CodePen from '../images/codepen.svg'
+import LinkedIn from '../images/linkedin.svg'
+import Dribbble from '../images/dribbble.svg'
+
 function ScrollToTopOnMount() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,6 +40,19 @@ const Layout = ({ children }) => {
         <main className="__main">
           {children}
         </main>
+
+        <div className="bottom-line left">
+          <ul>
+            <li><a href="https://github.com/napacreativeco" title="Github"><img src={GitHub} alt="GitHub" /></a></li>
+            <li><a href="https://codepen.io/napacreativeco" title="Codepen"><img src={CodePen} alt="Codepen" /></a></li>
+            <li><a href="https://www.linkedin.com/in/jamesadamrogers/" title="LinkedIn"><img src={LinkedIn} alt="LinkedIn" /></a></li>
+            <li><a href="https://dribbble.com/jamesadamrogers" title="Dribbble"><img src={Dribbble} alt="Dribbble" /></a></li>
+          </ul>
+        </div>
+
+        <div className="bottom-line right">
+         <p>hello@napacreativeco.com</p>
+        </div>
 
         {/* Footer */}
         <footer style={{ textAlign: 'center', padding: '20px 40px' }}>

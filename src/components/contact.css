@@ -1,0 +1,70 @@
+/* =================
+ * Contact Page
+ * ================= */
+ .contact-container {
+  padding-top: 80px;
+}
+.contact-container h2 {
+  color: #484848;
+  font-size: 28px;
+}
+.contact-container h2 a,
+.contact-container h2 span {
+  font-weight: 300;
+  font-size: 60%;
+  padding-left: 15px;
+  color: #585858
+}
+.contact-form {
+  width: 85%;
+  max-width: 600px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border-radius: 15px;
+  padding: 40px;
+  margin: 20px auto 80px auto;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid #484848;
+  padding: 10px 6px;
+  border-radius: 4px;
+}
+.contact-form textarea {
+  min-height: 100px;
+  min-width: 100%;
+  max-width: 100%;
+}
+.contact-form label p,
+.contact-form h3 {
+  font-weight: 600;
+  margin: 6px 0px;
+  color: #484848;
+  font-size: 1.2rem;
+}
+.contact-radio-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 40px 0px;
+}
+.contact-form .radio-btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact-form button {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  background: transparent;
+  border: 2px solid #484848;
+  border-radius: 6px;
+  padding: 5px 12px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  border-radius: 10px;
+  letter-spacing: 1px;
+  background: #f1f1f1;
+}
