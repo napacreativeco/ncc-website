@@ -16,6 +16,11 @@ import CodePen from '../images/codepen.svg'
 import LinkedIn from '../images/linkedin.svg'
 import Dribbble from '../images/dribbble.svg'
 
+import config from 'react-reveal/globals';
+
+config({ ssrFadeout: true });
+
+
 function ScrollToTopOnMount() {
   useEffect(() => {
     window.scrollTo(0, 0);
