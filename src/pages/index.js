@@ -4,6 +4,7 @@ import BackgroundImage from 'gatsby-background-image'
 import { Link } from "gatsby"
 import '../css/app.css'
 import Hero from '../components/hero.js'
+import Newsletter from '../components/newsletter.js'
 import ViewMore from "../images/view-more-fill.svg"
 
 import Layout from "../components/layout"
@@ -49,6 +50,8 @@ function IndexPage({ data }) {
       <div class="preloader"><img src="/332.gif" alt="Just a sec..." style={{ width: '100px'}} /></div>
 
       <Hero />
+
+      <Newsletter />
 
 
       <div className="home-loop-title">

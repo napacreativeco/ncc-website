@@ -161,6 +161,23 @@ header .main-menu li a:hover {
   height: 2px;
   margin: 4px 0px;
 }
+#bun .fixings {
+  transition: all 0.3s;
+}
+.bun #one.open-faced {
+  transform: rotate(45deg);
+  position: absolute;
+}
+.bun #two.open-faced {
+  display: none;
+}
+.bun #three.open-faced {
+  transform: rotate(-45deg);
+  float: left;
+}
+.hamburger #close {
+  display: none;
+}
 /* Mobile Menu */
 .mobile-menu {
   background: #eaeaea;
@@ -175,10 +192,10 @@ header .main-menu li a:hover {
 }
 .mobile-menu li {
   padding: 40px 20px;
-  border-bottom: 1px solid #484848;
+  border-bottom: 2px solid #484848;
 }
 .mobile-menu li:first-of-type {
-  border-top: 1px solid #484848;
+  /* border-top: 1px solid #484848; */
 }
 .mobile-menu li a {
   font-size: 150%;
@@ -209,6 +226,43 @@ h1.hero-title {
 }
 .hero .row p.sub-title {
   font-size: 18px;
+}
+
+/* ==========================
+*  Homepage > Newsletter
+ * ========================== */
+.newsletter .cell {
+  width: 50%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 40px;
+}
+.newsletter .cell:first-of-type {
+  border-right: 2px dashed #eaeaea;
+}
+.newsletter form {
+  position: relative;
+}
+.newsletter input[type="email"] {
+  margin-right: 15px;
+  width: 50%;
+}
+.newsletter button {
+  background: #fefefe;
+  outline: 0px;
+  border: 0px; 
+  border-radius: 15px;
+}
+.newsletter input[type="email"],
+.newsletter button {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 0px;
+}
+.newsletter .msg-alert p {
+  margin-bottom: 0px;
 }
 
 /* ===============
@@ -616,6 +670,26 @@ footer {
   }
   .radio-btn {
     margin: 0px 0px 12px 0px;
+  }
+  .newsletter {
+    flex-direction: column;
+  }
+  .newsletter .cell {
+    width: 100%;
+  }
+  .newsletter form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0px 10px 0px;
+  }
+  .newsletter .cell:first-of-type {
+    border-right: 0px;
+    border-bottom: 2px dashed #eaeaea;
+    padding-bottom: 30px;
+  }
+  .newsletter input {
+    width: 60%;
   }
 
 }
