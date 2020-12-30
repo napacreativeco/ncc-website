@@ -24,14 +24,23 @@ class Header extends React.Component {
       this.setState({
         display: 'block',
         boxShadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px',
-        top: '0px'
+        top: '0px',
+        burger: 'none',
+        openClass: 'open-faced',
+        padding: '6px'
       })
     } else {
       this.setState({
         display: 'none',
-        boxShadow: 'none'
+        boxShadow: 'none',
+        burger: 'block',
+        openClass: '',
+        padding: '0px'
       })
     }
+
+
+
   }
 
   render() {
@@ -58,7 +67,9 @@ class Header extends React.Component {
             <div className="main-menu"><NavigationLinks /></div>
 
             <div className="hamburger" role="link" tabIndex="0" onClick={ this.handleClick } onKeyDown={ this.handleClick }>
-              <div><Hamburger  /></div>
+              <div style={{ position: 'relative', padding: this.state.padding }}>
+                <Hamburger openClassParent={this.state.openClass} />
+              </div>
             </div>
 
         </div>
