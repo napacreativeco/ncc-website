@@ -1,0 +1,159 @@
+/* ===============
+ * Navigation
+ * =============== */
+ header {
+  width: 100%;
+}
+header .row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+header .cell {
+  display: flex;
+  align-items: center;
+}
+header .row.top {
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+header .cell.center {
+  border-left: 2px solid #484848;
+  border-right: 2px solid #484848;
+  padding: 0px 20px;
+  width: 70%;
+}
+header .cell.right {
+  text-align: right;
+}
+header img {
+  width: 200px;
+}
+header .row.menu {
+  min-height: 40px;
+  border-top: 2px solid #484848;
+  border-bottom: 2px solid #484848;
+  justify-content: center;
+}
+
+header .main-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+header .main-menu li a {
+  margin-right: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+header .main-menu li a:hover {
+  border-bottom: 2px solid #484848;
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  width: 20px;
+  cursor: pointer;
+  outline: 0px;
+}
+.hamburger:focus,
+.hamburger:active {
+  outline: 0px;
+}
+.hamburger .bun {
+  width: 20px;
+}
+.hamburger .fixings {
+  width: 20px;
+  background: #484848;
+  height: 2px;
+  margin: 4px 0px;
+}
+#bun .fixings {
+  transition: all 0.3s;
+}
+.bun #one.open-faced {
+  transform: rotate(45deg);
+  position: absolute;
+}
+.bun #two.open-faced {
+  display: none;
+}
+.bun #three.open-faced {
+  transform: rotate(-45deg);
+  float: left;
+}
+.hamburger #close {
+  display: none;
+}
+/* Mobile Menu */
+.mobile-menu {
+  background: #eaeaea;
+  transition: all 1s;
+  width: 100%;
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.mobile-menu li {
+  padding: 40px 20px;
+  border-bottom: 2px solid #484848;
+}
+.mobile-menu li:first-of-type {
+  /* border-top: 1px solid #484848; */
+}
+.mobile-menu li a {
+  font-size: 150%;
+  margin: 5px 10px;
+}
+
+
+@media screen and (max-width: 950px) {
+    /* Navigation */
+    .main-menu {
+      display: none !important;
+    }
+    .hamburger {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    header .row.top {
+      padding: 0px 40px;
+      display: flex;
+      justify-content: center;
+    }
+    header .cell.left,
+    header .cell.right {
+      width: 20%;
+      font-size: 12px;
+    }
+    header .cell.center {
+      text-align: center;
+      width: 80%;
+    }
+    .mobile-menu ul {
+      margin-top: 0;
+    }
+
+}
+
+
+
+
+
+@media screen and (max-width: 694px) {
+
+    header .cell.left,
+    header .cell.right {
+      display: none;
+    } 
+
+}

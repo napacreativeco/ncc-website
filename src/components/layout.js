@@ -9,7 +9,7 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 // import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import Header from "./Header/Header"
 
 import GitHub from '../images/github.svg'
 import CodePen from '../images/codepen.svg'

@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import Hamburger from './hamburger.js'
-import NavigationLinks from './navigation.js'
+import NavigationLinks from '../navigation.js'
+import './Header.css';
 
 import Fade from 'react-reveal/Fade';
 
@@ -20,6 +21,7 @@ class Header extends React.Component {
   }
 
   handleClick(e) {
+
     if ( this.state.display === 'none') {
       this.setState({
         display: 'block',
@@ -39,8 +41,6 @@ class Header extends React.Component {
       })
     }
 
-
-
   }
 
   render() {
@@ -49,15 +49,15 @@ class Header extends React.Component {
 
         <div className="row top">
           <div className="cell left">
-            <h4>GRAPHIC DESIGN</h4>
+            <h4>GRAPHIC<br />DESIGN</h4>
           </div>
-          <div className="cell center">
+          <div className="cell center" style={{ justifyContent: 'center' }}>
             <Link to="/" className="logo-container">
               <h2>NAPA CREATIVE CO.</h2>
             </Link>
           </div>
-          <div className="cell right">
-            <h4>WEB DEVELOPMENT</h4>
+          <div className="cell right" style={{ justifyContent: 'flex-end', paddingRight: '10px' }}>
+            <h4>WEB<br />DEVELOPMENT</h4>
           </div>
         </div>
 

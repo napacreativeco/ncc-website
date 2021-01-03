@@ -3,12 +3,16 @@ import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import { Link } from "gatsby"
 import '../css/app.css'
-import Hero from '../components/hero.js'
-import Newsletter from '../components/newsletter.js'
-import ViewMore from "../images/view-more-fill.svg"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+import Hero from '../components/Hero/Hero.js'
+import Newsletter from '../components/newsletter.js'
+import ViewMore from "../images/view-more-fill.svg"
+import Skills from '../components/Skills/Skills.js'
+
+import HeroImage from "../images/hero-collection.jpg"
+import Diamond from "../images/ncc-diamond.svg"
 
 import Fade from 'react-reveal/Fade';
 
@@ -42,6 +46,7 @@ export const query = graphql`
 `;
 
 
+
 function IndexPage({ data }) {
   return (
     <Layout>
@@ -51,12 +56,25 @@ function IndexPage({ data }) {
 
       <Hero />
 
-      <Newsletter />
+
+      <Skills />
+
+
+      <div style={{ padding: '0px 0px 40px 0px' }}>
+          <div className="image">
+            <Fade delay={800}>
+              <img src={HeroImage} alt="Napa Creative Co" style={{ width: '100%' }} />
+            </Fade>
+          </div>
+        </div>
+
+      
 
 
       <div className="home-loop-title">
         <Fade bottom delay={200}><h2>Recent work <a href="/work" title="Our Work">browse all</a></h2></Fade>
       </div>
+
       <div className="home-loop">
         <ul className="row">
           {data.allSanityProject.edges.map(({ node: project }) => (
@@ -81,6 +99,14 @@ function IndexPage({ data }) {
           ))}
         </ul>
       </div>
+
+      <div style={{ textAlign: 'center', padding: '0px 0px 40px 0px' }}>
+        <Fade bottom delay={500}>
+          <img src={Diamond} alt="Napa Creative Co" style={{ width: '100px'}} />
+        </Fade>
+      </div>
+
+      <Newsletter />
 
       <div className="homepage-services">
         <div className="cell">
