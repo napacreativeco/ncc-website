@@ -23,7 +23,14 @@ function ContactUs() {
       <div className="contact-form">
         <MyForm />
       </div>
+      <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', marginBottom: '40px' }}>
+      <h4 style={{ marginBottom: '0px' }}>Physical Mail</h4>
+      <p>PO Box 5172<br />
+      Napa, CA 94581</p>
+      </div>
     </div>
+
+
 
     <div className="back-to-home"><Link to="/">Back to home</Link></div>
   </Layout>
