@@ -25,7 +25,7 @@ function ContactUs() {
       </div>
       <div style={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', textAlign: 'center', marginBottom: '40px' }}>
       <h4 style={{ marginBottom: '0px' }}>Address</h4>
-      <p>1163 Cayetano Drive<br />
+      <p>820 Randolph St<br />
       Napa, CA 94559</p>
       </div>
     </div>
